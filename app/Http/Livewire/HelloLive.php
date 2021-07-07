@@ -8,6 +8,7 @@ class HelloLive extends Component
 {
     public $name = 'Pleasure';
     public $loud = false;
+    public $greeting = ['Hello'];
     public function render()
     {
         return view('livewire.hello-live');
