@@ -9,4 +9,9 @@
     </select>
 
     {{ implode(', ', $greeting ) }}, {{$name}} @if($loud) ! @endif
+
+    <form action="#" wire:submit.prevent = "$set('name', 'Champion')">
+        <button>Reset Name</button>
+    </form>
+     
 </div>
