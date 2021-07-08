@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use Illuminate\Http\Request;
 use Livewire\Component;
 
 class HelloLive extends Component
@@ -14,6 +15,16 @@ class HelloLive extends Component
     // {
     //     $this->name = $name;
     // }
+
+    public function mount($name)
+    {
+        $this->name = $name;
+    }
+
+    public function updated()
+    {
+        $this->name = 'updated!';
+    }
 
     public function render()
     {

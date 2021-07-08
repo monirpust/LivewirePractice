@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    @livewire('hello-live')
+    @livewire('hello-live', ['name' => 'Joy'])
 
     <h1>Hello livewire</h1>
 
