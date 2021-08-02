@@ -2,28 +2,23 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Contact;
 use Illuminate\Http\Request;
 use Livewire\Component;
 
 class HelloLive extends Component
 {
-    public $name = 'Pleasure';
-    public $loud = false;
-    public $greeting = ['Hello'];
+    public $contacts;
 
-    // public function resetName($name = 'curly')
-    // {
-    //     $this->name = $name;
-    // }
-
-    public function mount($name)
+    function mount()
     {
-        $this->name = $name;
+        $this->contacts = Contact::all();
     }
 
-    public function updated()
+    public function removeContact($name)
     {
-        $this->name = 'updated!';
+        Contact::whereName($name)->first()->delete();
+        $this->contacts = Contact::all();
     }
 
     public function render()
