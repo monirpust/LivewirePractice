@@ -11,7 +11,9 @@
 
     <hr>
 
-    <button wire:click="$refresh">RefreshParent</button>
+    <!-- <button wire:click="$refresh">RefreshParent</button> -->
     
     {{now()}}
+
+    <button wire:click ="$emit('refreshChild')">RefreshChild</button>
 </div>

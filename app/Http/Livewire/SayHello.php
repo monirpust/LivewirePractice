@@ -9,6 +9,13 @@ class SayHello extends Component
 {
     public $contact;
 
+    protected $listeners = ['foo' => '$refresh'];
+
+    public function emitFoo()
+    {
+        $this->emitUp('foo');
+    }
+
     function mount(Contact $contact){
         $this->contact = $contact;
     }

@@ -8,6 +8,8 @@ use Livewire\Component;
 
 class HelloLive extends Component
 {
+    protected $listeners = ['foo' => '$refresh'];
+
     public $contacts;
 
     function mount()
@@ -20,6 +22,11 @@ class HelloLive extends Component
         Contact::whereName($name)->first()->delete();
         $this->contacts = Contact::all();
     }
+
+    // public function refreshChild()
+    // {
+    //     $this->emit('refreshChild', 'foo');
+    // }
 
     public function render()
     {
